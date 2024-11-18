@@ -1,0 +1,92 @@
+Here are detailed notes for each DOM selection method:
+
+### 1. **`getElementById()`**
+- **Returns**: A single element (the first one with the specified `id`).
+- **Usage**: Use when you know the `id` of the element you want to select.
+- **Key Points**:
+  - IDs should be unique within a document.
+  - Only one element is returned, even if multiple elements somehow share the same `id`.
+- **Example**:
+  ```javascript
+  const title = document.getElementById('judul');
+  console.log(title); // Logs the element with id="judul"
+  title.style.color = 'blue'; // Styles the element
+  ```
+
+---
+
+### 2. **`getElementsByTagName()`**
+- **Returns**: An **HTMLCollection** of elements with the specified tag name.
+- **Usage**: Use when you want to select multiple elements by tag (e.g., `<p>`, `<div>`).
+- **Key Points**:
+  - HTMLCollection is **live**, meaning it updates automatically if the DOM changes.
+  - Access elements using an index (e.g., `collection[0]`).
+  - You can loop through the collection with `for` or convert it to an array.
+- **Example**:
+  ```javascript
+  const paragraphs = document.getElementsByTagName('p');
+  console.log(paragraphs); // Logs all <p> elements in the document
+  paragraphs[0].style.backgroundColor = 'lightgray'; // Styles the first <p> element
+  ```
+
+---
+
+### 3. **`getElementsByClassName()`**
+- **Returns**: An **HTMLCollection** of elements with the specified class name.
+- **Usage**: Use when you want to select elements by class name.
+- **Key Points**:
+  - HTMLCollection is **live**, like `getElementsByTagName`.
+  - You can loop through the collection using `for` or convert it to an array.
+- **Example**:
+  ```javascript
+  const pClass1 = document.getElementsByClassName('p1');
+  console.log(pClass1); // Logs elements with class="p1"
+  pClass1[0].style.fontWeight = 'bold'; // Styles the first element with class="p1"
+  ```
+
+---
+
+### 4. **`querySelector()`**
+- **Returns**: The **first** element matching the CSS selector.
+- **Usage**: Use when you want to select a single element using a CSS selector.
+- **Key Points**:
+  - Can select elements by `id`, `class`, tag, or a combination of these.
+  - Returns `null` if no matching element is found.
+- **Example**:
+  ```javascript
+  const firstParagraph = document.querySelector('p');
+  console.log(firstParagraph); // Logs the first <p> element
+  firstParagraph.style.color = 'green'; // Styles the first <p>
+  ```
+
+---
+
+### 5. **`querySelectorAll()`**
+- **Returns**: A **NodeList** of elements matching the CSS selector.
+- **Usage**: Use when you want to select multiple elements using a CSS selector.
+- **Key Points**:
+  - Unlike HTMLCollection, a NodeList is **static** (does not update if the DOM changes).
+  - You can loop through a NodeList using `forEach`.
+  - Access elements using an index (e.g., `nodelist[0]`).
+- **Example**:
+  ```javascript
+  const allParagraphs = document.querySelectorAll('p');
+  console.log(allParagraphs); // Logs all <p> elements
+  allParagraphs.forEach((paragraph) => {
+    paragraph.style.border = '1px solid red'; // Adds a red border to all <p> elements
+  });
+  ```
+
+---
+
+### Summary Table
+
+| Method                | Returns              | Live/Static | Suitable for                       |
+|-----------------------|----------------------|-------------|------------------------------------|
+| `getElementById`      | Single Element       | N/A         | Selecting a single element by `id`. |
+| `getElementsByTagName`| HTMLCollection      | Live        | Selecting multiple elements by tag. |
+| `getElementsByClassName` | HTMLCollection   | Live        | Selecting multiple elements by class name. |
+| `querySelector`       | First Element       | Static      | Selecting the first match using a CSS selector. |
+| `querySelectorAll`    | NodeList            | Static      | Selecting all matches using a CSS selector. |
+
+This overview helps you decide which method to use based on your requirements and the type of return value needed.
