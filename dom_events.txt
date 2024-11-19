@@ -1,0 +1,119 @@
+Here’s a list of common event types in JavaScript, along with examples:
+
+---
+
+### **1. Mouse Events**
+Mouse-related events occur when users interact with the mouse.
+
+| **Event**         | **Description**                                    | **Example**                                             |
+|--------------------|----------------------------------------------------|---------------------------------------------------------|
+| `click`           | Fires when an element is clicked                   | `element.addEventListener('click', () => {...});`       |
+| `dblclick`        | Fires on a double-click                            | `element.addEventListener('dblclick', () => {...});`    |
+| `mousedown`       | Fires when the mouse button is pressed             | `element.addEventListener('mousedown', () => {...});`   |
+| `mouseup`         | Fires when the mouse button is released            | `element.addEventListener('mouseup', () => {...});`     |
+| `mouseover`       | Fires when the mouse enters an element             | `element.addEventListener('mouseover', () => {...});`   |
+| `mouseout`        | Fires when the mouse leaves an element             | `element.addEventListener('mouseout', () => {...});`    |
+| `mousemove`       | Fires when the mouse moves over an element         | `element.addEventListener('mousemove', () => {...});`   |
+| `contextmenu`     | Fires when the right-click menu is triggered       | `element.addEventListener('contextmenu', () => {...});` |
+
+---
+
+### **2. Keyboard Events**
+Triggered by user interaction with the keyboard.
+
+| **Event**         | **Description**                                    | **Example**                                             |
+|--------------------|----------------------------------------------------|---------------------------------------------------------|
+| `keydown`         | Fires when a key is pressed                        | `element.addEventListener('keydown', (e) => {...});`    |
+| `keyup`           | Fires when a key is released                       | `element.addEventListener('keyup', (e) => {...});`      |
+| `keypress`        | (Deprecated) Fires when a key is pressed (legacy)  | `element.addEventListener('keypress', (e) => {...});`   |
+
+---
+
+### **3. Form Events**
+Form-related events are triggered when interacting with form elements.
+
+| **Event**         | **Description**                                    | **Example**                                             |
+|--------------------|----------------------------------------------------|---------------------------------------------------------|
+| `submit`          | Fires when a form is submitted                     | `form.addEventListener('submit', (e) => {...});`        |
+| `change`          | Fires when a form element value changes            | `input.addEventListener('change', () => {...});`        |
+| `input`           | Fires when the user inputs in a field              | `input.addEventListener('input', () => {...});`         |
+| `focus`           | Fires when an element gains focus                  | `input.addEventListener('focus', () => {...});`         |
+| `blur`            | Fires when an element loses focus                  | `input.addEventListener('blur', () => {...});`          |
+| `reset`           | Fires when a form is reset                        | `form.addEventListener('reset', () => {...});`          |
+
+---
+
+### **4. Window Events**
+These events are associated with the browser window or the document.
+
+| **Event**         | **Description**                                    | **Example**                                             |
+|--------------------|----------------------------------------------------|---------------------------------------------------------|
+| `load`            | Fires when the page has fully loaded               | `window.addEventListener('load', () => {...});`         |
+| `unload`          | Fires when the page is being unloaded              | `window.addEventListener('unload', () => {...});`       |
+| `scroll`          | Fires when the user scrolls the page               | `window.addEventListener('scroll', () => {...});`       |
+| `resize`          | Fires when the window is resized                   | `window.addEventListener('resize', () => {...});`       |
+| `beforeunload`    | Fires before the page unloads                      | `window.addEventListener('beforeunload', (e) => {...});`|
+
+---
+
+### **5. Clipboard Events**
+Triggered by actions involving the clipboard.
+
+| **Event**         | **Description**                                    | **Example**                                             |
+|--------------------|----------------------------------------------------|---------------------------------------------------------|
+| `copy`            | Fires when the user copies content                 | `element.addEventListener('copy', () => {...});`        |
+| `cut`             | Fires when the user cuts content                   | `element.addEventListener('cut', () => {...});`         |
+| `paste`           | Fires when the user pastes content                 | `element.addEventListener('paste', () => {...});`       |
+
+---
+
+### **6. Drag & Drop Events**
+Triggered during drag-and-drop interactions.
+
+| **Event**         | **Description**                                    | **Example**                                             |
+|--------------------|----------------------------------------------------|---------------------------------------------------------|
+| `dragstart`       | Fires when dragging starts                         | `element.addEventListener('dragstart', () => {...});`   |
+| `drag`            | Fires while dragging                               | `element.addEventListener('drag', () => {...});`        |
+| `dragend`         | Fires when dragging ends                           | `element.addEventListener('dragend', () => {...});`     |
+| `dragover`        | Fires when a dragged item is over a target         | `element.addEventListener('dragover', (e) => {...});`   |
+| `drop`            | Fires when a dragged item is dropped               | `element.addEventListener('drop', () => {...});`        |
+
+---
+
+### **7. Media Events**
+Triggered when interacting with audio or video elements.
+
+| **Event**         | **Description**                                    | **Example**                                             |
+|--------------------|----------------------------------------------------|---------------------------------------------------------|
+| `play`            | Fires when playback starts                         | `audio.addEventListener('play', () => {...});`          |
+| `pause`           | Fires when playback is paused                      | `audio.addEventListener('pause', () => {...});`         |
+| `ended`           | Fires when playback ends                           | `audio.addEventListener('ended', () => {...});`         |
+| `timeupdate`      | Fires as playback position changes                 | `audio.addEventListener('timeupdate', () => {...});`    |
+| `volumechange`    | Fires when the volume is changed                   | `audio.addEventListener('volumechange', () => {...});`  |
+
+---
+
+### **8. Touch Events**
+Triggered by touch-screen interactions.
+
+| **Event**         | **Description**                                    | **Example**                                             |
+|--------------------|----------------------------------------------------|---------------------------------------------------------|
+| `touchstart`      | Fires when a touch starts                          | `element.addEventListener('touchstart', () => {...});`  |
+| `touchmove`       | Fires when a touch moves                           | `element.addEventListener('touchmove', () => {...});`   |
+| `touchend`        | Fires when a touch ends                            | `element.addEventListener('touchend', () => {...});`    |
+
+---
+
+### **9. Other Events**
+Miscellaneous events that don’t fit into the above categories.
+
+| **Event**         | **Description**                                    | **Example**                                             |
+|--------------------|----------------------------------------------------|---------------------------------------------------------|
+| `error`           | Fires when an error occurs                         | `img.addEventListener('error', () => {...});`           |
+| `animationstart`  | Fires when a CSS animation starts                  | `element.addEventListener('animationstart', () => {...});`|
+| `animationend`    | Fires when a CSS animation ends                    | `element.addEventListener('animationend', () => {...});`|
+| `transitionend`   | Fires when a CSS transition ends                   | `element.addEventListener('transitionend', () => {...});`|
+
+---
+
+Feel free to ask for examples or code snippets for any specific event! 😊
