@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Training DOM</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        text-align: center;
+      }
+      .grey {
+        background-color: #ccc;
+      }
+      .box {
+        width: 25px;
+        height: 25px;
+        margin: 10px auto;
+      }
+      .red {
+        background-color: red;
+      }
+      .green {
+        background-color: green;
+      }
+      .blue {
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>DOM Games</h1>
+    <button type="button" id="changeButton">Change color</button>
+
+    <br />
+    <div class="box red">
+      <input type="range" name="redSlider" id="redSlider" min="1" max="255" />
+    </div>
+    <div class="box green">
+      <input
+        type="range"
+        name="greenSlider"
+        id="greenSlider"
+        min="1"
+        max="255"
+      />
+    </div>
+    <div class="box blue">
+      <input type="range" name="blueSlider" id="blueSlider" min="1" max="255" />
+    </div>
+    <script>
+      const changeButton = document.getElementById("changeButton");
+
+      changeButton.addEventListener("click", function () {
+        document.body.classList.toggle("grey");
+      });
+
+      const randomButton = document.createElement("button");
+      const textRandom = document.createTextNode("Random Color");
+      randomButton.appendChild(textRandom);
+      randomButton.setAttribute("type", "button");
+      changeButton.after(randomButton);
+
+      randomButton.addEventListener("click", function () {
+        const r = Math.round(Math.random() * 255 + 1);
+        const g = Math.round(Math.random() * 255 + 1);
+        const b = Math.round(Math.random() * 255 + 1);
+        document.body.style.backgroundColor =
+          "rgb(" + r + "," + g + "," + b + ")";
+      });
+
+      const redSlider = document.getElementById("redSlider");
+      const greenSlider = document.getElementById("greenSlider");
+      const blueSlider = document.getElementById("blueSlider");
+
+      redSlider.addEventListener("input", function () {
+        const redValue = redSlider.value;
+        const greenValue = greenSlider.value;
+        const blueValue = blueSlider.value;
+        document.body.style.backgroundColor =
+          "rgb(" + redValue + "," + greenValue + "," + blueValue + ")";
+      });
+      greenSlider.addEventListener("input", function () {
+        const redValue = redSlider.value;
+        const greenValue = greenSlider.value;
+        const blueValue = blueSlider.value;
+        document.body.style.backgroundColor =
+          "rgb(" + redValue + "," + greenValue + "," + blueValue + ")";
+      });
+      blueSlider.addEventListener("input", function () {
+        const redValue = redSlider.value;
+        const greenValue = greenSlider.value;
+        const blueValue = blueSlider.value;
+        document.body.style.backgroundColor =
+          "rgb(" + redValue + "," + greenValue + "," + blueValue + ")";
+      });
+
+      document.body.addEventListener("mousemove", function (event) {
+        const xPos = Math.round((event.clientX / window.innerWidth) * 255);
+        const yPos = Math.round((event.clientY / window.innerHeight) * 255);
+        document.body.style.backgroundColor =
+          "rgb(" + xPos + "," + yPos + "," + "100)";
+      });
+    </script>
+  </body>
+</html>
